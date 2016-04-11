@@ -1,0 +1,26 @@
+<script type="text/javascript">
+	function threeandfive(first,second){
+		var sum = 0;
+		for(i=first; i<=second; i++){
+			if(i%3==0 ? !i%5==0 : i%5==0)
+				sum+=i;
+		}
+	console.log(sum)
+	}
+
+
+	function coins(numb){
+		change = numb;
+		var quarters = Math.floor(numb/25);
+		change = change%25;
+		var dimes = Math.floor(change/10);
+		change = change%10;
+		var nickels = Math.floor(change/5);
+		change = change%5;
+		console.log(quarters,dimes,nickels,change);
+	}
+
+	threeandfive(100,4000000);
+	coins(199);
+
+</script>

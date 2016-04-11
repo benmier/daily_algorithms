@@ -1,0 +1,76 @@
+<script type="text/javascript">
+	
+function rSigma(val){
+	if(val>0)
+		return val+rSigma(val-1);
+	else
+		return 0;
+}
+// console.log(rSigma(-1));
+
+var count = 0;
+// var count2 = 0;
+// function rBinary(arr,val){
+// 	mid = Math.floor(arr.length/2);
+// 	if(arr[mid]==val){
+// 		return count;
+// 	}
+// 	else if(arr.length!=0){
+// 		count++;
+// 		arr.splice(mid,1);
+// 		return rBinary(arr,val);
+// 	}
+// 	return false;
+// }
+// console.log(rBinary([1,2,3,4,5,6,7,8,9,10],3));
+
+
+
+function rsBinary(arr,val){
+	while(arr[Math.floor(arr.length/2)]!=val && arr.length!=1){
+		arr.splice(Math.floor(arr.length/2),1);
+		return rsBinary(arr,val);
+	}
+	if(arr[Math.floor(arr.length/2)]==val)
+		return count2;
+	return false;
+}
+// console.log(rsBinary([1,2,3,4,5,6,7,8,9,10],4));
+
+
+function rBinary(arr,val){
+	mid = Math.floor(arr.length/2);
+	if(arr[mid]==val){
+		count++;
+		return count;
+	}
+	else if(arr[mid]>val){
+		count++;
+		return rBinary(arr.slice(0,mid),val);
+	}
+	else if(arr[mid]<val){
+		count++;
+		return rBinary(arr.slice(mid),val);
+	}
+	return false;
+}
+
+// var temp = [];
+// for(var i=0; i<1000000; i++)
+// 	temp.push(i);
+
+
+numb = Math.floor(Math.random()*1000000)
+// console.log(numb)
+var sum = 0;
+// console.log((rBinary(temp,500001)))
+for(var j=0; j<10; j++){
+	var temp = [];
+	for(var i=0; i<1000000; i++)
+		temp.push(i);
+	numb = Math.floor(Math.random()*1000000)
+	console.log((rBinary(temp,numb)));
+}
+console.log(sum/10)
+
+</script>

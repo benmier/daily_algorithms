@@ -1,0 +1,50 @@
+<script type="text/javascript">
+	
+
+function SinglyLinkedList(){
+	this.head = null;
+	this.insert = function(index,value){
+		var curr = this.head;
+		var count = 0;
+		var newNode = new Node(value);
+		while(count<index-1){
+			curr = curr.next;		
+			count++;
+		}
+		newNode.next = curr.next;
+		curr.next = newNode;
+	}
+}
+
+function Node(value){
+	this.val = value;
+	this.next = null;
+}
+
+var sll = new SinglyLinkedList();
+sll.head = new Node(1);
+var curr = sll.head;
+for(var i=2; i<=10; i++) {
+	curr.next = new Node(i);
+	curr = curr.next;
+}
+
+
+function rListLength(node){
+	if(!node.next){
+		return 1;
+	}
+	else
+		return 1+rListLength(node.next);
+}
+console.log(rListLength(sll.head));
+
+function allValidPars(num,arr){
+	if(!arr)
+		arr = [];
+
+}
+console.log(allValidPars(2));
+()()(),(())(),((())),()(()),(()())
+
+</script>

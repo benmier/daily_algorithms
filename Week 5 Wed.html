@@ -1,0 +1,67 @@
+<script type="text/javascript">
+	
+
+function rTrib(num){
+	if(num<2)
+		return 0;
+	else if(num<3)
+		return 1;
+	else
+		return rTrib(num-1)+rTrib(num-2)+rTrib(num-3);
+}
+// console.log(rTrib(4));
+
+function strSubsets(str,result,count,sub){
+	if(!result)
+		result=[''];
+	if(!count)
+		count = 1;
+	if(!sub)
+		sub=str+str.slice(str.length/2)+str.slice(0,str.length/2)+str;
+	if(sub.length<count)
+		sub = sub.slice(count);
+	if(result.length==(str.length*2)+2)
+		return result;
+	if(result.length==(str.length*count)+1)
+		count++;
+	var first = sub.slice(0,count);
+	var second = sub.slice(first.length);
+	result.push(first);
+	// if (sub.length==0)
+	// 	sub=str;
+	strSubsets(str,result,count,second);
+}
+console.log(strSubsets("abc"));
+
+
+// function strSubsets2(str,sub){
+// 	if(!sub)
+// 		sub=str;
+// 	if(str=='')
+// 		str
+// }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</script>

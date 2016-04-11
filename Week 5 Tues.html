@@ -1,0 +1,57 @@
+<script type="text/javascript">
+	
+function rFib(num){
+	if(num==0)
+		return 0;
+	else if(num<=2)
+		return 1;
+	else
+		return rFib(num-1)+rFib(num-2);
+}
+// console.log(rFib(5));
+
+// function binaryString(str){
+// 	var arr = [];
+// 	var indexCounter = [];
+// 	for(var i=0; i<str.length; i++){
+// 		if(str[i]=="?")
+// 			indexCounter.push(i);
+// 	}
+// 	// arr.push(str.replace(/?/g,"0"))
+// 	// arr.push(str.replace(/?/g,"1"))
+// 	var combinations = [];
+// 	function combo(str, arr) {
+// 	    if (typeof (str) == 'string') str = str.split('');
+// 	    if (str.length == 0) combinations.push(arr.join(''));
+// 	    for (var i = 0; i < str.length; i++) {
+// 	        var x = str.splice(i, 1);
+// 	        arr.push(x);
+// 	        combo(str, arr);
+// 	        arr.pop();
+// 	        str.splice(i, 0, x);
+// 	    }
+// 	}
+// 	combo('010', []);
+// 	console.log(combinations);
+// 	for(var i=1; i<=Math.pow(indexCounter,2)-2; i++){
+
+// 	}
+// }
+
+function bSE(str,result){
+	if(!result){
+		result=[];
+	}
+	var firstHalf = str.split("?",1)[0];
+	var secondHalf = str.slice(firstHalf.length+1);
+	if(firstHalf.length==str.length)
+		result.push(firstHalf);
+	else{
+		bSE(firstHalf+"0"+secondHalf,result);
+		bSE(firstHalf+"1"+secondHalf,result);
+	}
+	return result;
+}
+console.log(bSE("1?01?1"));
+
+</script>

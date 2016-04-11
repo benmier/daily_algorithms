@@ -1,0 +1,75 @@
+<script type="text/javascript">
+
+var arr = [12,4,66,23,87,45,242,36];
+
+function secondLast(arr){
+	if(arr.length>1)
+		return arr[arr.length-2];
+	else
+		return "Array not large enough"
+}
+
+function nthLast(arr,n){
+	if(arr.length>=n)
+		return arr[arr.length-n];
+	else
+		return "Array not large enough"
+}
+
+function secondLargest(arr){
+	var max = arr[0];
+	var secondMax = arr[0];
+	for(var i=0; i<arr.length; i++){
+		if(arr[i]>max){
+			secondMax = max;
+			max = arr[i];
+		}
+	}
+	return secondMax;
+}
+
+function nthLargest(arr,n){
+	var test = [];
+	while (arr.length>0){
+		var min = arr[arr.length-1];
+		for (var i=0; i<arr.length; i++){
+			if (arr[i]<min)
+				min=arr[i];
+		}
+		arr.splice(arr[arr.indexOf(min)],1);
+		test.push(min);
+	}
+	return test[test.length-n];
+	
+	// var x = true;
+	// var len = arr.length-1
+	// while (x==true){
+	// 	var temp = false;
+	// 	for (var i=0; i<=len; i++){
+	// 		if (arr[i]>arr[i+1]){
+	// 			arr[i+1] = [arr[i], arr[i] = arr[i+1]][0];
+	// 			temp = true;
+	// 		}
+	// 	}
+	// 	if (temp = false)
+	// 		x = false;
+	// }
+	// return arr[arr.length-n];
+	
+	while(n>1){
+		var max = arr[0];
+		for(var i=0; i<arr.length; i++){
+			if(arr[i]>max)
+				max = arr[i]
+		}
+		arr.splice(max,0,);
+	}
+}
+
+
+console.log(secondLast(arr));
+console.log(nthLast(arr,3));
+console.log(secondLargest(arr));
+console.log(nthLargest(arr,2));
+
+</script>

@@ -1,0 +1,41 @@
+<script type="text/javascript">
+	
+arr = [1,2,3];
+function PushFront(numb){
+	var test = [];
+	for(var i=arr.length;i>0;i--)
+		arr[i]=arr[i-1];
+	arr[0]=numb;
+	console.log(arr);
+}
+PushFront(5);
+
+arr1 = [1,2,3];
+function PopFront(){
+	var temp = arr1[0]
+	for(var i=0;i<arr1.length-1;i++)
+		arr1[i]=arr1[i+1];
+	arr1.length=arr1.length-1;
+	console.log(arr1);
+}
+PopFront();
+
+function insertAt(arr,index,value){
+	for(var i=index+1;i<arr.length;i++)
+		arr[i]=arr[i-1];
+	arr[index]=value;
+	console.log(arr);
+}
+insertAt([1,2,3],2,5)
+
+arr1 = [1,2,3];
+function removeAt(arr,index){
+	var temp = arr[index]
+	for(var i=index;i<arr.length-1;i++)
+		arr[i]=arr[i+1];
+	arr.length=arr.length-1;
+	console.log(arr);
+}
+removeAt([1,2,3],2);
+
+</script>

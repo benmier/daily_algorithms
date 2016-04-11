@@ -1,0 +1,34 @@
+<script type="text/javascript">
+	
+function removeBlanks(str){
+	for(var i=0; i<str.length; i++){
+		if(str[i]==' '){
+			str = str.slice(0,i)+str.slice(i+1);
+			i--;
+		}
+	}
+	return str;
+}
+console.log(removeBlanks('       Test T e s t   '));
+
+function acronyms(str){
+	var acro='';
+	str = str.trim();
+	acro+=str[0].toUpperCase()
+	for(var i=0; i<str.length; i++){
+		if(str[i-1]==' ' && str[i]!=' '){	
+			acro+=str[i].toUpperCase();
+		}
+	}
+	return acro;
+}
+console.log(acronyms("    For what it's    worth   "));
+
+function removeChars(str){
+	var newString=str.replace(/\D/,'')
+	return newString;
+}
+console.log(removeChars('a1b2c3'));
+
+
+</script>

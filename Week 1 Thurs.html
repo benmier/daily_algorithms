@@ -1,0 +1,39 @@
+<script type="text/javascript">
+
+var max = 1;
+var min = 12;
+var rolls = 0;
+var sum = 0;
+var x=0;
+
+while(x==0){
+	rolls++
+	test1 = Math.floor((Math.random() * 6) + 1);
+	test2 = Math.floor((Math.random() * 6) + 1);
+	test = test1 + test2;
+	sum+=test;
+	if(test>max)
+		max = test;
+	if(test<min)
+		min = test;
+	if(test1==test2)
+		x=1;
+}
+console.log("Max: ",max)
+console.log("Min: ",min)
+console.log("Rolls: ",rolls)
+console.log("Avg: ",sum/rolls)
+
+function sumToOne(numb){
+	var sum=0;
+	for(var i=0; i<numb.toString().length; i++){
+		sum+=Number(numb.toString()[i]);
+	}
+	if(sum>9)
+		sumToOne(sum)
+	else
+		console.log("The single digit result is: ",sum);
+}
+sumToOne(55);
+
+</script>

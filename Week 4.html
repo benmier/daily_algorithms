@@ -1,0 +1,30 @@
+<script type="text/javascript">
+	
+var attr1 = ['a','b','c'];
+var attr2 = ['1','2','3'];
+
+function mapArray(arr1,arr2){
+	var dict = {};
+	for(var i in arr1)
+		dict[attr1[i]]=attr2[i];
+	return dict;
+}
+console.log(mapArray(attr1,attr2));
+
+function invertHash(dict){
+	dict2 = {};
+	for(var key in dict)
+		dict2[dict[key]]=key;
+	return dict2;
+}
+console.log(invertHash(mapArray(attr1,attr2)));
+
+function reverseString(string){
+	var temp = '';
+	for(var i=string.length-1; i>=0; i--){
+		temp+=string[i];
+	}
+	return temp;
+}
+console.log(reverseString("abcde"));
+</script>

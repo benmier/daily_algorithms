@@ -1,0 +1,90 @@
+<script type="text/javascript">
+	
+function parensValid(string){
+	if(typeof(string)!='string')
+		return "Not a string";
+	var count = 0;
+	for(var i=0; i<string.length; i++){
+		if(string[i]=='(')
+			count++;
+		if(string[i]==')')
+			count--;
+		if(count<0)
+			return false;
+	}
+	if(count==0)
+		return true;
+	else
+		return false;
+}
+// console.log(parensValid(''));
+
+function bracesValid(string){
+	if(typeof(string)!='string')
+		return "Not a string";
+	var temp = [];
+	for(var i=0; i<string.length; i++){
+		if(string[i]=='(' || string[i]=='{' || string[i]=='['){
+			temp.push(string[i]);
+			console.log("Temp:",temp," and i="+i);
+		}	
+		for(var j=i; j<string.length; j++){
+			console.log("j is",j);
+			if(string[j]==')'){
+				console.log("j is",j,"and string[j]=')'");
+				if(temp[temp.length-1]=='('){
+					console.log("j is",j,"and string[j]=')' and previous temp is '('");
+					break;
+				}
+				else
+					return false;
+			}
+			else if(string[j]=='}'){
+				console.log("j is",j,"and string[j]='}'");
+				if(temp[temp.length-1]=='{'){
+					console.log("j is",j,"and string[j]='}' and previous temp is '{'");
+					break;
+				}
+				else
+					return false;
+
+			}
+			else if(string[j]==']'){
+				if(temp[temp.length-1]=='[')
+					break;
+				else
+					return false;
+			}
+		}
+	}
+	return true;
+}
+console.log(bracesValid('({}){}'));
+
+
+
+function bracesValid2(string){
+	if(typeof(string)!='string')
+		return "Not a string";
+	var count = 0;
+	var count2 = 0;
+	var arr = ['(',')','{','}','[',']'];
+	for(var j=0; j<3; j++){
+		for(var i=0; i<string.length; i++){
+			if(string[i]==arr[count2])
+				count++;
+			if(string[i]==arr[count2+1])
+				count--;
+			if(count<0)
+				return false;
+		}
+		count2+=2;
+	}
+	if(count==0)
+		return true;
+	else
+		return false;
+}
+// console.log(bracesValid2(23));
+
+</script>

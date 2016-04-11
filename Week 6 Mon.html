@@ -1,0 +1,74 @@
+<script type="text/javascript">
+
+arr = [1,2,3,4,5,6,7,8,9];
+
+function average(arr){
+	var sum = 0;
+	for (i in arr)
+		sum += arr[i];
+	return sum/arr.length;
+}
+// console.log(average(arr));
+
+function shuffle(arr){
+	for (i in arr){
+		var index = Math.floor(Math.random()*(arr.length));
+		var temp = arr[i];
+		arr[i] = arr[index];
+		arr[index] = temp; 
+	}
+}
+// arr = [1,2,3,4,5,6,7,8,9];
+// console.log(arr);
+// shuffle(arr);
+// console.log(arr);
+
+function balancePoint(arr){
+	var sumLeft = arr[0], sumRight = arr[arr.length-1];
+	var leftIndex = 1, rightIndex = arr.length-1;
+	for(i in arr){
+
+		if (sumLeft<=sumRight){
+			sumLeft += arr[leftIndex];
+			leftIndex++;
+		}
+		else if (sumLeft>sumRight){
+			rightIndex--;
+			sumRight += arr[rightIndex];
+		}
+		if (leftIndex==rightIndex || leftIndex>rightIndex){
+			if (sumLeft==sumRight)
+				return true;
+			else
+				return false;
+		}
+	}
+}
+// console.log(balancePoint([1,2,3,4,10]));
+
+function balanceIndex(arr){
+	var sumLeft = arr[0], sumRight = arr[arr.length-1];
+	var leftIndex = 1, rightIndex = arr.length-1;
+	for(i in arr){
+
+		if (sumLeft<sumRight){
+			sumLeft += arr[leftIndex];
+			leftIndex++;
+		}
+		else if (sumLeft>=sumRight){
+			rightIndex--;
+			sumRight += arr[rightIndex];
+		}
+		if (Math.abs(rightIndex-leftIndex)==1){
+			if (sumLeft==sumRight)
+				return leftIndex;
+			else
+				return false;
+		}
+	}
+}
+console.log(balanceIndex([14,0,4,5,5]));
+
+
+
+</script>

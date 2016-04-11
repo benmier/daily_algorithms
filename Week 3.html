@@ -1,0 +1,173 @@
+<script type="text/javascript">
+	
+function SinglyLinkedList(){
+	this.head = null;
+	this.insert = function(index,value){
+		var curr = this.head;
+		var count = 0;
+		var newNode = new Node(value);
+		while(count<index-1){
+			curr = curr.next;		
+			count++;
+		}
+		newNode.next = curr.next;
+		curr.next = newNode;
+	}
+}
+
+function Node(value){
+	this.val = value;
+	this.next = null;
+}
+
+var sll = new SinglyLinkedList();
+sll.head = new Node(1);
+var curr = sll.head;
+for(var i=2; i<=4; i++) {
+	curr.next = new Node(i);
+	curr = curr.next;
+}
+
+function length(list){
+	if(list.head==null)
+		return "Invalid list";
+	var temp = list.head;
+	var count = 1;
+	console.log(sll);
+	while(temp.next){
+		count+=1;
+		temp = temp.next;
+	}
+	console.log(count);
+}
+// length(sll);
+
+function minMax(list){
+	if(list.head==null)
+		return "Invalid list";
+	var min = sll.head.val;
+	var max = sll.head.val;
+	var curr = sll.head;
+	while(curr.next){
+		if(curr.next.val<min)
+			min=curr.next.val;
+		if (curr.next.val>max)
+			max=curr.next.val;
+		curr = curr.next;
+	}
+	console.log("Min: ",min)
+	console.log("Max: ",max)
+}
+// minMax(sll);
+
+function average(list){
+	if(list.head==null)
+		return "Invalid list";
+	var count = 1;
+	var sum = sll.head.val;
+	var curr = sll.head;
+	while(curr.next){
+		sum+=curr.next.val;
+		count++;
+		curr = curr.next;
+	}
+	console.log("Average: ",sum/count)
+}
+// average(sll);
+
+function display(list){
+	if(list.head==null)
+		return "Invalid list";
+	var curr = sll.head;
+	var myList = String(sll.head.val)+", ";
+	while(curr.next){
+		myList += String(curr.next.val)+", ";
+		curr = curr.next;
+	}
+	console.log(myList);
+}
+// display(sll);
+
+function back(node){
+	var curr = node;
+	while(curr.next){
+		curr = curr.next;
+	}
+	return curr.val;
+}
+// console.log(back(sll.head));
+
+function removeBack(list){
+	if(list.head==null)
+		return "Invalid list";
+	var curr = list.head;
+	while(curr.next.next){
+		curr = curr.next;
+	}
+	curr.next = null;
+	console.log(list);
+	return list;
+}
+// removeBack(sll);
+
+function addBack(value,list){
+	if(list.head==null)
+		return "Invalid list";
+	var curr = list.head;
+	while(curr.next){
+		curr = curr.next;
+	}
+	curr.next = new Node(value);
+	console.log(list);
+	return list;
+}
+// addBack(5,sll);
+// sll.insert(3,5);
+
+function prepend(list,value,before){
+	if (list.head==null)
+		return "Invalid list"
+	var curr = list.head;
+	var newNode = new Node(value)
+	while(curr.next.val!=before){
+		if(curr.next.next==null)
+			return "Not in list"
+		curr = curr.next;
+	}
+	newNode.next = curr.next;
+	curr.next = newNode;
+	return list;
+}
+// console.log(prepend(sll,5,11));
+
+function appendVal(list,value,after){
+	if (list.head==null)
+		return "Invalid list"
+	var curr = list.head;
+	var newNode = new Node(value)
+	while(curr.val!=after)
+		if(curr.next.next==null)
+			return "Not in list"
+		curr = curr.next;
+	newNode.next = curr.next
+	curr.next = newNode;
+	return list;
+}
+// console.log(sll)
+// console.log(appendVal(sll,9,3));
+
+function removeVal(list,value){
+	if (list.head==null)
+		return "Invalid list"
+	var curr = list.head;
+	while(curr.next.val!=value){
+		if(curr.next.next==null)
+			return "Not in list"
+		curr = curr.next;
+	}
+	curr.next = curr.next.next;
+	return list;
+}
+console.log(removeVal(sll,4));
+
+</script>

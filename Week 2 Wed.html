@@ -1,0 +1,23 @@
+<script type="text/javascript">
+	
+arr = [1,2,3,4,5,6,7,9,10,11,55];
+var temp=1;
+function binarySearch(arr,x){
+	var floor = 0;
+	var ceil = arr.length-1;
+	while (true){
+		var half = Math.floor(ceil - (ceil-floor)/2);
+		if (ceil-floor==1)
+			return "Not in array";
+		if (x==arr[half])
+			return half;
+		if(x>arr[half])
+			floor = half;
+		else
+			ceil = half;
+	}
+}
+console.log(binarySearch(arr,11));
+
+
+</script>

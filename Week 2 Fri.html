@@ -1,0 +1,33 @@
+<script type="text/javascript">
+	
+var arr = [1,2,3,4,5];
+var arr2 = [6,7,8,9,10];
+
+function arrConcat(arr,arr2){
+	var temp = arr;
+	if (String(typeof(arr))!='object' || String(typeof(arr2))!='object')
+		return "False"
+	for(var i=0; i<arr2.length; i++){
+		temp.push(arr2[i]);
+	}
+	return temp;
+}
+
+var temp = {};
+function fasterFactorial(numb){
+	if (numb<=1)
+		return 1;
+	fact = numb*fasterFactorial(numb-1);
+	console.log(fact)
+	temp[numb]=fact;
+	return;
+
+}
+
+console.log(arrConcat(arr,arr2));
+console.log(arr);
+
+console.log(fasterFactorial(5));
+
+
+</script>
