@@ -14,19 +14,23 @@ function flatten(arr,newArr){
 	return	newArr;
 }
 arr = [1,[2,3,[4,[5],[],6],7],8,[],9];
-console.log(arr);
-flatten(arr)
-// console.log();
+// console.log(arr);
+// console.log(flatten(arr));
 
 function removeDupes(arr){
 	var newArr = [];
+	var dupe;
 	for(i in arr){
-		if()
-		
-		else
-			newArr.push(parseint(i));
+		dupe = false;
+		for(j in newArr){
+			if(i==j)
+				dupe = true
+		}
+		if(dupe==false)
+			newArr.push(parseInt(i));
 	}
+	return newArr;
 }
-// console.log(removeDupes(arr));
+console.log(removeDupes([1,2,3,1,4,5,3,6,7]));
 
 </script>
