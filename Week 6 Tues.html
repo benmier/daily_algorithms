@@ -1,11 +1,18 @@
 <script type="text/javascript">
 	
-arr = [];
+
 
 function flatten(arr){
-	
+	for(i in arr){
+		console.log(i)
+		// if(i==[])
+		// 	arr.splice(arr.indexOf(i),1);
+	}
 }
-console.log(flatten(arr));
+arr = [1,[2,3],[],4];
+console.log(arr)
+flatten(arr);
+// console.log(arr);
 
 function removeDupes(arr){
 
