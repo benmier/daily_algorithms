@@ -5,12 +5,15 @@
 function flatten(arr){
 	for(i in arr){
 		console.log(i)
+
 		// if(i==[])
 		// 	arr.splice(arr.indexOf(i),1);
 	}
+	if(arr[arr.indexOf(i)+1])
+			console.log("still more")
 }
-arr = [1,[2,3],[],4];
-console.log(arr)
+arr = [1,[2,3,4],[],4,7];
+// console.log(arr)
 flatten(arr);
 // console.log(arr);
 
