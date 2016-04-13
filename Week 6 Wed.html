@@ -5,8 +5,7 @@ var arr2 = [2,6,6,7];
 
 function mergeSortedArrays(arr1,arr2){
 	var newArr = [];
-	var count1 = 0;
-	var count2 = 0;
+	var count1 = 0, count2 = 0;
 	while(count1<arr1.length && count1<arr2.length){
 		if(arr1[count1]<=arr2[count2]){
 			newArr.push(arr1[count1]);
@@ -19,13 +18,25 @@ function mergeSortedArrays(arr1,arr2){
 	}
 	return newArr;
 }
-console.log(mergeSortedArrays(arr1,arr2));
+// console.log(mergeSortedArrays(arr1,arr2));
 
 
 function unionSortedArrays(arr1,arr2){
-
+	var newArr = [];
+	var count1 = 0, count2 = 0;
+	while(count1<arr1.length && count1<arr2.length){
+		if(arr1[count1]<=arr2[count2]){
+			newArr.push(arr1[count1]);
+			count1++;
+		}
+		else{
+			newArr.push(arr2[count2]);
+			count2++;
+		}
+	}
+	return newArr;
 }
-// console.log(unionSortedArrays(arr1,arr2));
+console.log(unionSortedArrays(arr1,arr2));
 
 
 function intersectSortedArrays(arr1,arr2){
