@@ -45,11 +45,13 @@ console.log(unionSortedArrays(arr1,arr2));
 
 
 function intersectSortedArrays(arr1,arr2){
-	var newArr = [];
-	newArr2 = {};
+	var newArr = [], newArr1 = {}, newArr2 = {};
+	for(var i=0; i<arr1.length; i++)
+		newArr1[arr1[i]]='';
 	for(var i=0; i<arr2.length; i++)
-		newArr2[arr2[i]]='';
-	console.log(newArr2)
+		newArr2[arr1[i]]='';
+	if(newArr1 in newArr2)
+		newArr.push(newArr1[0])
 	return newArr;
 }
 console.log(intersectSortedArrays(arr1,arr2));
