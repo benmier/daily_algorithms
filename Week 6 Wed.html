@@ -25,7 +25,10 @@ function unionSortedArrays(arr1,arr2){
 	var newArr = [];
 	var count1 = 0, count2 = 0;
 	while(count1<arr1.length && count1<arr2.length){
-		if(arr1[count1]<=arr2[count2]){
+		if(arr1[count1]==arr2[count2]){
+			count2++;
+		}
+		else if(arr1[count1]<arr2[count2]){
 			newArr.push(arr1[count1]);
 			count1++;
 		}
