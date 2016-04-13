@@ -48,10 +48,13 @@ function intersectSortedArrays(arr1,arr2){
 	var newArr = [], newArr1 = {}, newArr2 = {};
 	for(var i=0; i<arr1.length; i++)
 		newArr1[arr1[i]]='';
+	console.log(newArr1)
 	for(var i=0; i<arr2.length; i++)
 		newArr2[arr2[i]]='';
-	if(newArr1 in newArr2)
-		newArr.push(newArr1);
+	console.log(newArr2)
+	for(i in newArr1){
+		if(i in newArr2)
+			newArr.push(parseInt(i));
 	}
 	return newArr;
 }
