@@ -1,7 +1,7 @@
 <script type="text/javascript">
 	
 var arr1 = [1,2,2,7];
-var arr2 = [2,6,6,7,8,9];
+var arr2 = [2,6,6,7];
 
 function mergeSortedArrays(arr1,arr2){
 	var newArr = [];
@@ -18,7 +18,7 @@ function mergeSortedArrays(arr1,arr2){
 	}
 	return newArr;
 }
-console.log(mergeSortedArrays(arr1,arr2));
+// console.log(mergeSortedArrays(arr1,arr2));
 
 
 function unionSortedArrays(arr1,arr2){
@@ -41,16 +41,20 @@ function unionSortedArrays(arr1,arr2){
 	}
 	return newArr;
 }
-console.log(unionSortedArrays(arr1,arr2));
+// console.log(unionSortedArrays(arr1,arr2));
 
 
 function intersectSortedArrays(arr1,arr2){
 	var newArr = [], newArr2 = {};
 	for(var i=0; i<arr2.length; i++)
 		newArr2[arr1[i]]='';
-	for(i in arr1){
-		if(i in newArr2)
-			newArr.push(i)
+	console.log(arr2)
+	console.log(newArr2)
+	console.log(arr1)
+	for(var i=0; i<arr1.length; i++){
+		console.log(val)
+		if(val in newArr2)
+			newArr.push(val);
 	}
 	return newArr;
 }
