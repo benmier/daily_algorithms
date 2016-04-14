@@ -1,30 +1,46 @@
 <script type="text/javascript">
 	
-var arr1 = [1,2,2,7], arr2 = [2,6,6,7]; 
+// var arr1 = [1,2,2,7], arr2 = [2,6,6,7]; 
 
 function unionSortedArrays(arr1,arr2){
 	var newArr = [];
 	var count1 = 0, count2 = 0;
 	while(count1<arr1.length && count2<arr2.length){
 		if(arr1[count1]==arr2[count2]){
-			newArr.push(arr1[count1]);
+			if(arr1[count1]!=newArr[newArr.length-1])
+				newArr.push(arr1[count1]);
 			count1++;
 			count2++;
 		}
 		else if(arr1[count1]<=arr2[count2]){
-			newArr.push(arr1[count1]);
+			if(arr1[count1]!=newArr[newArr.length-1])
+				newArr.push(arr1[count1]);
 			count1++;
 		}
 		else{
-			newArr.push(arr2[count2]);
+			if(arr2[count2]!=newArr[newArr.length-1])
+				newArr.push(arr2[count2]);
 			count2++;
 		}
 	}
 	return newArr;
 }
-console.log(unionSortedArrays(arr1,arr2));
+// console.log(unionSortedArrays(arr1,arr2));
 
-
+var arr1 = [2,7,2,1], arr2 = [6,7,2,7,6,2]; 
+function intersectionUnsortedArrays(arr1,arr2){
+	var newArr = [], newArr1 = {}, newArr2 = {};
+	for(var i=0; i<arr1.length; i++)
+		newArr1[arr1[i]]='';
+	for(var i=0; i<arr2.length; i++)
+		newArr2[arr2[i]]='';
+	for(i in newArr1){
+		if(i in newArr2)
+			newArr.push(parseInt(i));
+	}
+	return newArr;
+}
+console.log(intersectionUnsortedArrays(arr1,arr2));
 
 
 
