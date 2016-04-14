@@ -44,7 +44,7 @@ function intersectionUnsortedArrays(arr1,arr2){
 
 
 function unionUnsortedArrays(arr1,arr2){
-	var newArr = [], pushed1, pushed2;
+	var newArr = [], pushed1;
 	for(var i in arr1){
 		pushed1 = false;
 		for(var j in arr1){
@@ -55,6 +55,12 @@ function unionUnsortedArrays(arr1,arr2){
 		}
 		if(pushed1==false)
 			newArr.push(arr1[i])
+	}
+	for(var k in arr2){
+		for(var m in newArr){
+			if(arr2[k]!=newArr[m])
+				newArr.push(arr2[k]);
+		}
 	}
 	return newArr;
 }
