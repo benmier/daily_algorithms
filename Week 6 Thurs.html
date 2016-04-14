@@ -29,14 +29,15 @@ function unionSortedArrays(arr1,arr2){
 
 var arr1 = [2,7,2,1], arr2 = [6,7,2,7,6,2]; 
 function intersectionUnsortedArrays(arr1,arr2){
-	var newArr = [], newArr1 = {}, newArr2 = {};
-	for(var i=0; i<arr1.length; i++)
-		newArr1[arr1[i]]='';
-	for(var i=0; i<arr2.length; i++)
-		newArr2[arr2[i]]='';
-	for(i in newArr1){
-		if(i in newArr2)
-			newArr.push(parseInt(i));
+	var newArr = [];
+
+	for(i in arr1){
+		for(j in arr2){
+			if(arr1[i]==arr2[j]){
+				newArr.push(arr1[i])
+				break;
+			}
+		}
 	}
 	return newArr;
 }
