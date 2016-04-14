@@ -56,11 +56,12 @@ function unionUnsortedArrays(arr1,arr2){
 		if(pushed1==false)
 			newArr.push(arr1[i])
 	}
-	for(var k in newArr){
+	for(var k in arr2){
 		inNewArr = false;
-		for(var m in arr2){
-			if(arr2[m]==newArr[k])
+		for(var m in newArr){
+			if(arr2[k]==newArr[m]){
 				inNewArr = true;
+			}
 		}
 		if(inNewArr==false)
 			newArr.push(arr2[k])
