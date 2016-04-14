@@ -30,7 +30,6 @@ function unionSortedArrays(arr1,arr2){
 var arr1 = [2,7,2,1], arr2 = [6,7,2,7,6,2]; 
 function intersectionUnsortedArrays(arr1,arr2){
 	var newArr = [];
-
 	for(i in arr1){
 		for(j in arr2){
 			if(arr1[i]==arr2[j]){
@@ -41,9 +40,30 @@ function intersectionUnsortedArrays(arr1,arr2){
 	}
 	return newArr;
 }
-console.log(intersectionUnsortedArrays(arr1,arr2));
+// console.log(intersectionUnsortedArrays(arr1,arr2));
 
 
+function unionUnsortedArrays(arr1,arr2){
+	var newArr = [];
+	var count1 = 0, count2 = 0;
+	while(count1<arr1.length && count2<arr2.length){
+		if(arr1[count1]==arr2[count2]){
+			newArr.push(arr1[count1]);
+			count1++;
+			count2++;
+		}
+		else if(arr1[count1]<=arr2[count2]){
+			newArr.push(arr1[count1]);
+			count1++;
+		}
+		else{
+			newArr.push(arr2[count2]);
+			count2++;
+		}
+	}
+	return newArr;
+}
+console.log(unionUnsortedArrays(arr1,arr2));
 
 
 
