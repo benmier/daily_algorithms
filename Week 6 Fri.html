@@ -1,16 +1,16 @@
 <script type="text/javascript">
 	
 function unionUnsortedArrays(arr1,arr2,A,B) {
-	for(i in B){
-		if(i in A && A[i]>B[i])
+	for(var i in B){
+		if(i in A && A[i]>=B[i])
 			continue;
 		else if(i in A && A[i]<B[i]){
-			for(var m=0; m<=(B[i]-A[i]); m++)
-				arr1.push(i);
+			for(var m=1; m<=(B[i]-A[i]); m++)
+				arr1.push(parseInt(i));
 		}
 		else{
-			for(var k=0; k<=B[i]; k++)
-				arr1.push(i);
+			for(var k=1; k<=B[i]; k++)
+				arr1.push(parseInt(i));
 		}
 	}
 }
