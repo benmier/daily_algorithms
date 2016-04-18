@@ -31,7 +31,7 @@ function longestWord(str){
 console.log(longestWord("Snap crackle pop makes the world go round!"));
 
 function wordOrder(str){
-	var newArr = [], strTemp='';
+	var newArr = [], strTemp='', finalStr = '';
 	for(var i=0; i<=str.length; i++){
 		if(str[i]==" " || i==str.length){
 			newArr.push(strTemp);
@@ -40,7 +40,9 @@ function wordOrder(str){
 		else
 			strTemp+=str[i];
 	}
-	return newArr;
+	for(var i=newArr.length-1; i>=0; i--)
+		finalStr = finalStr+" "+newArr[i];
+	return finalStr;
 }
 console.log(wordOrder("Life is not a drill, go for it!"))
 
