@@ -47,18 +47,26 @@ function wordOrder(str){
 console.log(wordOrder("Life is not a drill, go for it!"))
 
 function uniqueWords(str){
-	var uniques = [], strTemp='';
+	var uniques=[], strTemp='', dupe, finalStr;
 	for(var i=0; i<=str.length; i++){
 		if(str[i]==" " || i==str.length){
-			uniques.push(strTemp);
+			dupe = false;
+			for(var j=0; j<uniques.length; j++){
+				if(strTemp==uniques[j])
+					dupe = true;
+			}	
+			if(!dupe)
+				uniques.push(strTemp);
 			strTemp = '';
 		}
 		else
 			strTemp+=str[i];
 	}
-	return newArr;
+	for(var i=0; i<uniques.length; i++)
+			finalStr = finalStr+" "+uniques[i];
+	return finalStr;
 }
-console.log(uniqueWords("Sing! Sing a song; sing out loud; sing out string."))
+console.log(uniqueWords("Sing! Sing a song; sing out loud; sing out strong."))
 
 
 
