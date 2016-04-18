@@ -52,7 +52,7 @@ function uniqueWords(str){
 		if(str[i]==" " || i==str.length){
 			dupe = false;
 			for(var j=0; j<uniques.length; j++){
-				if(strTemp==uniques[j])
+				if(strTemp.toLowerCase()==uniques[j].toLowerCase())
 					dupe = true;
 			}	
 			if(!dupe)
