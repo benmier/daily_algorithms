@@ -4,7 +4,7 @@
 function string2WordsArray(str){
 	var newArr = [], strTemp='';
 	for(var i=0; i<=str.length; i++){
-		if(str[i]==" " || i==str.length){
+		if(str[i]==" " || str[i]=="\t" || str[i]=="\r" || i==str.length){
 			newArr.push(strTemp);
 			strTemp = '';
 		}
