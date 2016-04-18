@@ -2,14 +2,33 @@
 	
 
 function string2WordsArray(str){
-	var newArr = [];
-	for(i in str){
-		console.log(i)
+	var newArr = [], strTemp='';
+	for(var i=0; i<=str.length; i++){
+		if(str[i]==" " || i==str.length){
+			newArr.push(strTemp);
+			strTemp = '';
+		}
+		else
+			strTemp+=str[i];
 	}
+	return newArr;
 }
 console.log(string2WordsArray("Life is not a drill"));
 
-
+function longestWord(str){
+	var longest='', strTemp='';
+	for(var i=0; i<=str.length; i++){
+		if(str[i]==" " || i==str.length){
+			if(strTemp.length>longest.length)
+				longest = strTemp;
+			strTemp = '';
+		}
+		else
+			strTemp+=str[i];
+	}
+	return longest;
+}
+console.log(longestWord("Snap crackle pop makes the world go round!"));
 
 
 
