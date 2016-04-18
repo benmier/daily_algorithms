@@ -46,8 +46,19 @@ function wordOrder(str){
 }
 console.log(wordOrder("Life is not a drill, go for it!"))
 
-
-
+function uniqueWords(str){
+	var uniques = [], strTemp='';
+	for(var i=0; i<=str.length; i++){
+		if(str[i]==" " || i==str.length){
+			uniques.push(strTemp);
+			strTemp = '';
+		}
+		else
+			strTemp+=str[i];
+	}
+	return newArr;
+}
+console.log(uniqueWords("Sing! Sing a song; sing out loud; sing out string."))
 
 
 
