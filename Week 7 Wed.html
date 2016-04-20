@@ -19,14 +19,17 @@ function isPermutation(str1,str2){
 
 function isPangram(str){
 	str = str.replace(/ /g,"");
-	var newStr1={}, newStr2={};
+	var newStr1={}, newStr2='';
 	for(i in str)
 		newStr1[str[i]]='';
-	console.log(newStr1)
-
-
+	for(i in newStr1)
+		newStr2+=i;
+	if(isPermutation(newStr2,"abcdefghijklmnopqrstuvwxyz"))
+		return true;
+	else
+		return false;
 }
-console.log(isPangram("How quickly daft jumping zebras vexl"));
+console.log(isPangram("how quickly daft jumping zebras vexl"));
 
 
 
