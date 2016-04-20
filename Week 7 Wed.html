@@ -2,13 +2,14 @@
 	
 
 function isPermutation(str1,str2){
-	for(var i=0; i<str1.length; i++){
-		if(str1[0]==str2[i]){
-			if(str1.length==0)
+	if(str1.length==0)
 				return true;
-			isPermutation(str1.slice(1),str2)
+	for(var i=0; i<str2.length; i++){
+		if(str1[0]==str2[i]){
+			isPermutation(str1.slice(1),str2.slice(0,i)+str2.slice(i+1))
 		}
 	}
+	return false;
 }
 console.log(isPermutation("mister","stimer"));
 
