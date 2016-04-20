@@ -2,8 +2,6 @@
 	
 
 function isPermutation(str1,str2){
-	str1 = str1.replace(/ /g,"");
-	str2 = str2.replace(/ /g,"");
 	if(str1.length!=str2.length)
 		return false;
 	if(str1.length==0)
@@ -20,10 +18,13 @@ function isPermutation(str1,str2){
 // console.log(isPermutation("qwertyuiopasdfghjklzxcvbnm","pqowieurytlaksjdhfgzmxncbv"));
 
 function isPangram(str){
-	if(isPermutation(str,"abcdefghijklmnopqrstuvwxyz"))
-		return true;
-	else
-		return false;
+	str = str.replace(/ /g,"");
+	var newStr1={}, newStr2={};
+	for(i in str)
+		newStr1[str[i]]='';
+	console.log(newStr1)
+
+
 }
 console.log(isPangram("How quickly daft jumping zebras vexl"));
 
