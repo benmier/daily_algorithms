@@ -18,7 +18,7 @@ function isPermutation(str1,str2){
 // console.log(isPermutation("qwertyuiopasdfghjklzxcvbnm","pqowieurytlaksjdhfgzmxncbv"));
 
 function isPangram(str){
-	str = str.replace([a-zA-Z],"");
+	str = str.replace(/a-zA-Z/,"");
 	var newStr1={}, newStr2='';
 	for(i in str)
 		newStr1[str[i]]='';
@@ -32,7 +32,7 @@ function isPangram(str){
 console.log(isPangram("how quickly daft jumping zebras vexl"));
 
 function isPerfectPanagram(str){
-	str = str.replace([a-zA-Z],"");
+	str = str.replace(/\W/g,"");
 }
 
 
