@@ -2,12 +2,10 @@
 	
 
 function isPermutation(str1,str2){
+	str1 = str1.replace(/ /g,"");
+	str2 = str2.replace(/ /g,"");
 	if(str1.length!=str2.length)
 		return false;
-	else{
-		str1 = str1.replace(/" "/g,"");
-		str2 = str2.replace(/" "/g,"");
-	}
 	if(str1.length==0)
 		return true;
 	for(var i=0; i<str2.length; i++){
@@ -19,10 +17,15 @@ function isPermutation(str1,str2){
 	}
 	return false;
 }
-console.log(isPermutation("qwertyuiopasdfghjklzxcvbnm","pqowieurytlaksjdhfgzmxncbv"));
+// console.log(isPermutation("qwertyuiopasdfghjklzxcvbnm","pqowieurytlaksjdhfgzmxncbv"));
 
-function isPangram(Str)
-
+function isPangram(str){
+	if(isPermutation(str,"abcdefghijklmnopqrstuvwxyz"))
+		return true;
+	else
+		return false;
+}
+console.log(isPangram("How quickly daft jumping zebras vexl"));
 
 
 
