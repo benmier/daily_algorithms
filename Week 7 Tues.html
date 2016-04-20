@@ -1,5 +1,55 @@
 <script type="text/javascript">
 	
+function rotateString(str, num){
+    var realNum = Math.abs(num)%str.length;
+    var shift = '';
+    var stay = '';
+    if(num>0){
+        realNum = str.length - realNum;
+    }
+    for(var i=0;i<str.length;i++){
+        if(i<realNum){
+            shift=shift+str[i];
+        }else{
+            stay=stay+str[i];
+        }
+    }
+    return stay+shift;
+}
+
+function isRotation(str1, str2){
+    if(str1 == str2){
+        return true;
+    }
+    if(str1.length != str2.length){
+        return false;
+    }
+    if(str1.length == 1){
+        return false;
+    }
+    var check = str2[str2.length-1]+str2[0]
+    var checkPoints = [];
+    for(var i=0;i<str1.length-1;i++){
+        if(str1[i] == check[0]){
+            if(str1[i+1]==check[1]){
+                checkPoints.push(i+1)
+            }
+        }
+    }
+    if(checkPoints.length===0){
+        return false;
+    }else{
+        for(var j=0;j<checkPoints.length;j++){
+            var checkMe = rotateString(str2, checkPoints[j]);
+            console.log("checking...", checkMe);
+            console.log("against:", str1);
+            if(str1==checkMe){
+                return true;
+            }
+        }
+        return false;
+    }
+}
 
 function censor(str,badArr){
 	var tempStr = '', finalStr='', xStr='x';
