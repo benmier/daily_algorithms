@@ -1,9 +1,11 @@
 <script type="text/javascript">
 	
 
-function isPermutation(str1,str2){
-	if(str1.length==0)
-				return true;
+function isPermutation(str1,str2,check){
+	if(!check)
+		check=false;
+	if(str1.length==0 || check==true)
+		return check=true;
 	for(var i=0; i<str2.length; i++){
 		if(str1[0]==str2[i]){
 			isPermutation(str1.slice(1),str2.slice(0,i)+str2.slice(i+1))
