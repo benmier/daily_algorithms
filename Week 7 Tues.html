@@ -1,0 +1,43 @@
+<script type="text/javascript">
+	
+
+function censor(str,badArr){
+	var tempStr = '', finalStr='', xStr='x';
+	for(var i=0; i<str.length; i++){
+		for(var m=0; m<badArr.length; m++){
+			var badStr=badArr[m];
+			if(str[i]==badStr[0]){
+				tempStr+=str[i]
+				for(var j=1; j<=badStr.length; j++){
+					if(str[parseInt(i)+j]==badStr[j]){
+						tempStr+=badStr[j];
+						xStr+="x";
+					}
+					else{
+						if(tempStr==badStr){
+							finalStr+=xStr;
+							i+=badStr.length;
+						}
+						tempStr = '';
+						xStr = 'x';
+						break;
+					}
+				}
+			}
+		}
+		finalStr+=str[i];
+	}
+	return finalStr
+}
+console.log(censor("Snap crackle pop nincompoop!",["crack",'poop']));
+
+
+
+
+
+
+
+
+
+
+</script>
