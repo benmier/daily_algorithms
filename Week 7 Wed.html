@@ -4,6 +4,10 @@
 function isPermutation(str1,str2){
 	if(str1.length!=str2.length)
 		return false;
+	else{
+		str1 = str1.replace(/" "/g,"");
+		str2 = str2.replace(/" "/g,"");
+	}
 	if(str1.length==0)
 		return true;
 	for(var i=0; i<str2.length; i++){
@@ -17,7 +21,7 @@ function isPermutation(str1,str2){
 }
 console.log(isPermutation("qwertyuiopasdfghjklzxcvbnm","pqowieurytlaksjdhfgzmxncbv"));
 
-
+function isPangram(Str)
 
 
 
