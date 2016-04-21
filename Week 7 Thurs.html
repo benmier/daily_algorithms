@@ -24,5 +24,14 @@ function dedupeString(str){
 }
 console.log(dedupeString("Snaps! crackles! pops!"))
 
+function idxFirstUniqLtr(str){
+	var dd = objectify(str), joe = 0;
+	for(var i=0; i<str.length; i++){
+		if(dd[str[i]]==1)
+			joe=i;
+	}
+	return joe;
+}
+console.log(idxFirstUniqLtr("empathetic monarch meets primo stinker"));
 
 </script>
