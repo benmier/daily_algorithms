@@ -1,0 +1,16 @@
+<script type="text/javascript">
+	
+function dedupeString(str){
+	var obj = {};
+	for(i in str){
+		if(obj[str[i]])
+			obj[str[i]]++;
+		else
+			obj[str[i]]=1;
+	}
+	console.log(obj)
+}
+dedupeString("testme")
+
+
+</script>
