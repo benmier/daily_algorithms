@@ -34,4 +34,14 @@ function idxFirstUniqLtr(str){
 }
 console.log(idxFirstUniqLtr("empathetic monarch meets primo stinker"));
 
+function uniqueLetters(str){
+	var dd = objectify(str), x='';
+	for(i in dd){
+		if(dd[i]==1)
+			x+=i;
+	}
+	return x;
+}
+console.log(uniqueLetters("Snap! Crackle! Poop!"));
+
 </script>
