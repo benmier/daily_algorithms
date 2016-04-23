@@ -1,0 +1,70 @@
+<script type="text/javascript" src="word_scores.js"></script>
+
+<script type="text/javascript">
+	
+
+function findWords(str){
+	var tempStr, str = str.toUpperCase();
+	for(var word6 in words["6"]){
+		var tempStr6 = isPermutation(word6,str)
+		if(tempStr6){
+			for(var word5 in words["5"]){
+				var tempStr5 = isPermutation(word5,tempStr6)
+				if(tempStr5){
+					for(var word4 in words["4"]){
+						var tempStr4 = isPermutation(word4,tempStr5)
+						if(tempStr4){
+							console.log(tempStr4,word4,word5,word6);
+							for(var word3 in words["3"]){
+								var tempStr3 = isPermutation(word3,tempStr4)
+								if(tempStr3){
+									return [word3,word4,word5,word6];
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	return true;
+		
+}
+// debugger
+// findWords("dleeuodtmbaediedli")
+console.log(findWords("arilsaoseeydwlsrpg"));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+function isPermutation(str1,str2){
+	if(str1.length==0)
+		return str2;
+	for(var i=0; i<str2.length; i++){
+		if(str1[0]==str2[i]){
+			var rtn = isPermutation(str1.slice(1),str2.slice(0,i)+str2.slice(i+1));
+			if(rtn!=null)
+				return rtn;
+		}
+	}
+	return false;
+}
+
+
+
+
+
+
+
+
+</script>
